@@ -1,0 +1,23 @@
+// 将设置放入此文件中以覆盖默认值和用户设置。
+{
+    "editor.renderWhitespace": true,
+    "editor.tabSize": 2,
+    "files.associations": {
+        "*.vue": "vue"
+    },
+    "files.exclude": {
+        ".vscode/": true,
+        "build/": true,
+        "config/": true,
+        "node_modules/": true,
+        "static/": true,
+        ".babelrc": true,
+        ".editorconfig": true,
+        ".eslintrc.js": true,
+        ".gitignore": true,
+        ".travis.yml": true,
+        "index.html": true,
+        "package.json": true,
+        "README.md": true
+    }
+}

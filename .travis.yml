@@ -1,0 +1,42 @@
+# 编译平台
+language: node_js
+
+# 编译版本
+node_js:
+  - "node"
+
+# 指定分支
+branches:
+  only:
+    - master
+
+# 安装依赖
+install:
+  - npm install
+
+# 执行编译
+script:
+  - npm run build
+
+# 推送代码
+after_success:
+  - cd dist
+  - mv static/CNAME .
+  - git init
+  - git config user.name "yozman"
+  - git config user.email "yozman@sina.com"
+  - git add .
+  - git commit -m "$TRAVIS_COMMIT"
+  - git push -f -q "https://$GITHUB_TOKEN@github.com/yozman/sysc.git" master:gh-pages
+
+# 缓存依赖
+cache:
+  directories:
+    - node_modules
+
+# 消息通知
+notifications:
+  webhooks:
+    urls:
+      - https://hooks.pubu.im/services/2k9gdn43rywwcmw
+    on_start: always
