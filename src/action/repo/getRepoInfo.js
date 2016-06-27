@@ -1,8 +1,8 @@
 import { request } from '../http'
 
-module.exports = ({ dispatch }) =>
+module.exports = ({ dispatch }, data) =>
   request('https://api.github.com/repos/yozman/sysc')
-    .get()
+    .get(data)
     .then(response => {
       response.ok &&
         dispatch('repo.setForkAndStar', {

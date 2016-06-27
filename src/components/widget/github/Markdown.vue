@@ -1,5 +1,6 @@
 <template lang="pug">
 div( :class.once=" $options.name ")
+  | hello
 </template>
 
 <script>

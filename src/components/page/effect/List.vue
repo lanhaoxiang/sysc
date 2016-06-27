@@ -1,29 +1,30 @@
 <template lang="pug">
 div( :class.once=" $options.name ",
      v-show=" !$loadingRouteData ")
-  github-corner( :args=" { url: 'https://github.com/yozman/sysc' } ")
+  a( href=" https://github.com/yozman/sysc ")
+    github-corner
   header
     h1 show you sth cool
     div
-      bootstrap-button( :args=" { url: 'https://github.com/yozman/sysc/network' } ")
-        | fork: {{ _fork }}
-      bootstrap-button( :args=" { url: 'https://github.com/yozman/sysc/stargazers' } " )
-        | star: {{ _star }}
+      a( href=" https://github.com/yozman/sysc/network ")
+        bootstrap-button fork: {{ _fork }}
+      a( href=" https://github.com/yozman/sysc/stargazers ")
+        bootstrap-button star: {{ _star }}
   effect-list
 </template>
 
 <script>
 export default {
   name: 'P__Effect_List',
-  components: {
-    'bootstrap-button': resolve => require(['components/widget/bootstrap/Button'], resolve),
-    'effect-list': resolve => require(['components/module/effect/List'], resolve),
-    'github-corner': resolve => require(['components/widget/github/Corner'], resolve)
-  },
   route: {
     data ({ next }) {
       this._getRepoInfo().then(() => next())
     }
+  },
+  components: {
+    'bootstrap-button': resolve => require(['components/widget/bootstrap/Button'], resolve),
+    'effect-list': resolve => require(['components/module/effect/List'], resolve),
+    'github-corner': resolve => require(['components/widget/github/Corner'], resolve)
   },
   vuex: {
     getters: {

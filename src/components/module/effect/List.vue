@@ -46,5 +46,5 @@ export default {
   tr:hover a
     @extend .btn-primary-outline
   a
-    transition: border .3s
+    transition: all .3s
     @extend .btn, .btn-sm
