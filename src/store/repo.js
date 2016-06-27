@@ -1,9 +1,11 @@
+// repo 模块状态
 const state = {
   fork: 0,
   star: 0,
   readme: ''
 }
 
+// repo 状态触发器
 const mutations = {
   'repo.setForkAndStar' (state, { fork, star }) {
     state.fork = fork
@@ -18,7 +20,8 @@ const mutations = {
   }
 }
 
-module.exports = {
+// 导出 repo 模块
+export default {
   state,
   mutations
 }

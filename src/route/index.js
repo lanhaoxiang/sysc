@@ -1,19 +1,12 @@
-export default {
-  '/': controller('effect')
+import Effect from './effect'
+
+// effect 控制器
+const effect = {
+  subRoutes: Effect,
+  component: resolve => require(['components/layout/Controller'], resolve)
 }
 
-/**
- * 创建控制器
- *
- * @param {String} name
- * @param {Object} options
- * @return {Object}
- */
-
-function controller (name, options) {
-  return {
-    component: resolve => require(['components/layout/Blank'], resolve),
-    subRoutes: require(`src/route/modules/${name}`),
-    ...options
-  }
+// 导出路由
+export default {
+  '/': effect
 }

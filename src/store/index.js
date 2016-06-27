@@ -1,17 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import repo from './repo'
 
 // 加载 vuex 插件
 Vue.use(Vuex)
 
 // 定义模块合集
-const modules = {}
-
-// 循环添加所有模块
-// TODO: 遍历文件
-'repo'.replace(/\w+/, (s) => {
-  modules[s] = require(`./modules/${s}`)
-})
+const modules = {
+  repo
+}
 
 // 导出 vuex store
 export default new Vuex.Store({

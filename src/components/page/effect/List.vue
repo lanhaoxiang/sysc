@@ -1,5 +1,6 @@
 <template lang="pug">
-div( :class.once=" $options.name ", v-show=" !$loadingRouteData ")
+div( :class.once=" $options.name ",
+     v-show=" !$loadingRouteData ")
   github-corner( :args=" { url: 'https://github.com/yozman/sysc' } ")
   header
     h1 show you sth cool
@@ -30,7 +31,7 @@ export default {
       _star: state => state.repo.star
     },
     actions: {
-      _getRepoInfo: require('src/action/modules/getRepoInfo')
+      _getRepoInfo: require('src/action/repo/getRepoInfo')
     }
   }
 }

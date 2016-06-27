@@ -1,5 +1,6 @@
 <template lang="pug">
-div( :class.once=" $options.name ", v-html=" _list | marked | scoped ")
+div( :class.once=" $options.name ",
+     v-html=" _list | marked | scoped ")
 </template>
 
 <script>
@@ -23,7 +24,7 @@ export default {
       _list: state => state.repo.readme
     },
     actions: {
-      _getReadme: require('src/action/modules/getReadme')
+      _getReadme: require('src/action/repo/getReadme')
     }
   }
 }

@@ -1,5 +1,6 @@
 <template lang="pug">
-div( :class.once=" $options.name ", @click=" args && clickHandler() ")
+div( :class.once=" $options.name ",
+     @click=" args && clickHandler() ")
   slot
 </template>
 
