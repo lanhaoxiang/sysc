@@ -7,7 +7,7 @@ module.exports = ({ dispatch }, data) =>
     })
     .then(response => {
       response.ok &&
-        dispatch('repo.setReadme', {
+        dispatch('repo.setActive', {
           content: response.data.content,
           encoding: response.data.encoding
         })

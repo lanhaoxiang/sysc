@@ -2,7 +2,7 @@
 div( :class.once=" $options.name "
      v-show=" !$loadingRouteData ")
   header
-    h1 超链接 hover 效果
+    h1 {{ _title }}
     div
       a
         bootstrap-button 笔记
@@ -10,7 +10,7 @@ div( :class.once=" $options.name "
         bootstrap-button 演示
       a( :href=" `https://github.com/yozman/sysc/tree/${ $route.params.num }` ")
         bootstrap-button 源码
-  github-markdown
+  github-markdown( :content=" _content ")
 </template>
 
 <script>
@@ -32,6 +32,10 @@ export default {
     }
   },
   vuex: {
+    getters: {
+      _title: state => state.repo.active.title,
+      _content: state => state.repo.active.content
+    },
     actions: {
       _getNote: require('src/action/effect/getNote')
     }
