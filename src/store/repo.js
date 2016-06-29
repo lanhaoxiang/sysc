@@ -3,10 +3,7 @@ const state = {
   fork: 0,
   star: 0,
   readme: '',
-  active: {
-    title: '',
-    content: ''
-  }
+  effectList: []
 }
 
 // repo 状态触发器
@@ -15,19 +12,16 @@ const mutations = {
     state.fork = fork
     state.star = star
   },
-  'repo.setReadme' (state, { content, encoding }) {
-    switch (encoding) {
-      case 'base64':
-        state.readme = decodeURIComponent(escape(window.atob(content)))
-        break
-    }
-  },
-  'repo.setActive' (state, { content, encoding }) {
-    state.active.title = content.substr('18')
-    switch (encoding) {
-      case 'base64':
-        state.active.content = decodeURIComponent(escape(window.atob(content)))
-    }
+  'repo.setEffectList' (state, data) {
+    let effectList = []
+    data.forEach(effect => {
+      effectList.push({
+        key: effect.name,
+        title: effect.description,
+        source: effect.html_url
+      })
+    })
+    state.effectList = effectList
   }
 }
 

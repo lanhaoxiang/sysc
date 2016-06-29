@@ -1,30 +1,36 @@
 <template lang="pug">
-div( :class.once=" $options.name ",
-     v-html=" _list | marked | scoped ")
+div( :class.once=" $options.name ")
+  table
+    thead
+      tr
+        each th in [ '编号', '描述', '链接' ]
+          th= th
+    tbody
+      tr( v-for=" effect in _list ")
+        td {{ effect.key }}
+        td {{ effect.title }}
+        td
+          a( :href=" effect.source ")
+            bootstrap-button 源码
+          a( v-link=" effect.key " )
+            bootstrap-button 预览
 </template>
 
 <script>
 export default {
   name: 'M__Effect_List',
-  created () {
-    this._getReadme()
+  components: {
+    'bootstrap-button': resolve => require(['components/widget/bootstrap/Button'], resolve)
   },
-  filters: {
-    marked: require('marked'),
-    scoped (val) {
-      let key = this.$el.attributes[0].name
-      return val.replace(
-        /(<\w+)([ >])/g,
-        (s, s1, s2) => `${s1} ${key}${s2}`
-      )
-    }
+  created () {
+    this._getList()
   },
   vuex: {
     getters: {
-      _list: state => state.repo.readme
+      _list: state => state.repo.effectList
     },
     actions: {
-      _getReadme: require('src/action/repo/getReadme')
+      _getList: require('src/action/repo/getEffectList')
     }
   }
 }
@@ -34,7 +40,6 @@ export default {
 @import ~bootstrap/scss/_variables
 @import ~bootstrap/scss/_mixins
 @import ~bootstrap/scss/_tables
-@import ~bootstrap/scss/_buttons
 
 .M__Effect_List
   table
@@ -43,8 +48,3 @@ export default {
     @extend .thead-default
   tbody td
     vertical-align: middle
-  tr:hover a
-    @extend .btn-primary-outline
-  a
-    transition: all .3s
-    @extend .btn, .btn-sm

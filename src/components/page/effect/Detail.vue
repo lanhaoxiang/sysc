@@ -4,11 +4,10 @@ div( :class.once=" $options.name "
   header
     h1 {{ _title }}
     div
-      a
-        bootstrap-button 笔记
+      a: bootstrap-button( type=" primary " size=" sm " outline ) 笔记
       a( @click=" preview ")
         bootstrap-button 演示
-      a( :href=" `https://github.com/yozman/sysc/tree/${ $route.params.num }` ")
+      a( :href=" _source ")
         bootstrap-button 源码
   github-markdown( :content=" _content ")
 </template>
@@ -18,7 +17,7 @@ export default {
   name: 'P__Effect_Detail',
   route: {
     data ({ next }) {
-      this._getNote({
+      this._getEffect({
         id: this.$route.params.num
       }).then(() => next())
     }
@@ -33,11 +32,12 @@ export default {
   },
   vuex: {
     getters: {
-      _title: state => state.repo.active.title,
-      _content: state => state.repo.active.content
+      _title: state => state.effect.title,
+      _source: state => state.effect.source,
+      _content: state => state.effect.readme
     },
     actions: {
-      _getNote: require('src/action/effect/getNote')
+      _getEffect: require('src/action/effect/getEffect')
     }
   }
 }

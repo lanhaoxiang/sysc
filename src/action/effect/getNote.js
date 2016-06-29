@@ -1,13 +1,11 @@
 import { request } from '../http'
 
 module.exports = ({ dispatch }, data) =>
-  request('https://api.github.com/repos/yozman/sysc/contents/README.md')
-    .get({
-      ref: data.id
-    })
+  request(`https://api.github.com/repos/sth-cool/${data.id}/contents/README.md`)
+    .get()
     .then(response => {
       response.ok &&
-        dispatch('repo.setActive', {
+        dispatch('effect.setReadme', {
           content: response.data.content,
           encoding: response.data.encoding
         })

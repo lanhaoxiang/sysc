@@ -1,13 +1,24 @@
 <template lang="pug">
-div( :class.once=" $options.name ",
-     @click=" args && clickHandler() ")
+div( :class.once=" $options.name ")
   slot
 </template>
 
 <script>
 export default {
   name: 'W__Bootstrap_Button',
-  props: [ 'args' ],
+  props: {
+    type: {
+      type: String,
+      default: 'primary'
+    },
+    outline: {
+      type: Boolean,
+      default: false
+    },
+    size: {
+      type: String
+    }
+  },
   methods: {
     clickHandler () {
       if (this.args.url) {
