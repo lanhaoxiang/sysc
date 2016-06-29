@@ -2,14 +2,17 @@
 div( :class.once=" $options.name "
      v-show=" !$loadingRouteData ")
   header
-    h1 {{ _title }}
+    h1 {{ _effect.title }}
     div
-      a: bootstrap-button( type=" primary " size=" sm " outline ) 笔记
-      a( @click=" preview ")
+      a: bootstrap-button 笔记
+      a( @click=" preview = true ")
         bootstrap-button 演示
-      a( :href=" _source ")
+      a( :href=" _effect.source ")
         bootstrap-button 源码
-  github-markdown( :content=" _content ")
+  github-markdown( :content=" _effect.readme ")
+  effect-preview( v-if=" preview ",
+                  :url=" _effect.preview ",
+                  :open.sync=" preview ")
 </template>
 
 <script>
@@ -24,17 +27,17 @@ export default {
   },
   components: {
     'bootstrap-button': resolve => require(['components/widget/bootstrap/Button'], resolve),
-    'github-markdown': resolve => require(['components/widget/github/Markdown'], resolve)
+    'github-markdown': resolve => require(['components/widget/github/Markdown'], resolve),
+    'effect-preview': resolve => require(['components/module/effect/Preview'], resolve)
   },
-  methods: {
-    preview () {
+  data () {
+    return {
+      preview: false
     }
   },
   vuex: {
     getters: {
-      _title: state => state.effect.title,
-      _source: state => state.effect.source,
-      _content: state => state.effect.readme
+      _effect: state => state.effect
     },
     actions: {
       _getEffect: require('src/action/effect/getEffect')
@@ -61,12 +64,18 @@ export default {
       vertical-align: middle
     h1 + div
       margin-top: -160px
+      &:hover a:before
+        transform: scale(0)
+        background: none
+      a:hover:before
+        transform: scaleX(1)
+        background: $link-hover-color
     a
       position: relative
       transition: color .3s
-      &:hover:before
+      &:first-child:before
         transform: scaleX(1)
-        background: $link-hover-color
+        background: $link-color
       &:before
         content: ''
         position: absolute

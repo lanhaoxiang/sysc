@@ -2,6 +2,7 @@ const state = {
   key: '',
   title: '',
   source: '',
+  preview: '',
   readme: ''
 }
 
@@ -10,6 +11,7 @@ const mutations = {
     state.key = data.name
     state.title = data.description
     state.source = data.html_url
+    state.preview = data.homepage
   },
   'effect.setReadme' (state, { content, encoding }) {
     switch (encoding) {
