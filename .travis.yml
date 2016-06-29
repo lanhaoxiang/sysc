@@ -3,7 +3,7 @@ language: node_js
 
 # 编译版本
 node_js:
-  - "node"
+  - "5.11.1"
 
 # 指定分支
 branches:
@@ -27,7 +27,7 @@ after_success:
   - git config user.email "yozman@sina.com"
   - git add .
   - git commit -m "$TRAVIS_COMMIT"
-  - git push -f -q "https://$GITHUB_TOKEN@github.com/yozman/sysc.git" master:gh-pages
+  - git push -f "https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG.git" master:gh-pages
 
 # 缓存依赖
 cache:
