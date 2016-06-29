@@ -1,5 +1,5 @@
 <template lang="pug">
-div( :class.once=" $options.name "
+div( :class.once=" [ $options.name, { open: preview } ] "
      v-show=" !$loadingRouteData ")
   header
     h1 {{ _effect.title }}
@@ -53,6 +53,9 @@ export default {
 
 .P__Effect_Detail
   @extend .container
+  &.open
+    height: 0
+    overflow: hidden
   header
     height: 400px
     text-align: center

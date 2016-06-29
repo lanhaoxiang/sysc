@@ -23,8 +23,9 @@ export default {
 @import ~bootstrap/scss/_close
 
 .M__Effect_Preview
-  position: fixed
+  position: absolute
   top: 0; right: 0; bottom: 0; left: 0
+  overflow: hidden
   background: #fff
 iframe
   width: 100%; height: 100%
