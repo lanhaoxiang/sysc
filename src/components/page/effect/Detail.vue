@@ -10,7 +10,7 @@ div( :class.once=" [ $options.name, { open: preview } ] "
       a( :href=" _effect.source ")
         bootstrap-button 源码
   github-markdown( :content=" _effect.readme ")
-  effect-preview( v-if=" preview ",
+  effect-preview( v-show=" preview ",
                   :url=" _effect.preview ",
                   :open.sync=" preview ")
 </template>
