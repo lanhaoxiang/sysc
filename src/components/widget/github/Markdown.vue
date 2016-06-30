@@ -31,4 +31,5 @@ export default {
 @import ~primer-markdown/lib/code
 
 .W__Github_Markdown
+  font-family: inherit
   @extend .markdown-body
