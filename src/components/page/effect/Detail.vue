@@ -61,6 +61,7 @@ export default {
     text-align: center
     & + div
       max-width: 910px
+      margin: 2em auto
     &:before
       content: ''
       height: 100%
