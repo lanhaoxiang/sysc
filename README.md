@@ -1,5 +1,7 @@
 > 这是一个特效展示 SPA 项目  
 > http://sysc.fromyb.com
+>
+> ![图片](https://avatars1.githubusercontent.com/u/2195901?s=64)
 
 ### TODO
 - [x] 首页列表
