@@ -1,7 +1,5 @@
-# show you sth cool
-
-这是一个特效展示 SPA 项目
-<http://sysc.fromyb.com>
+> 这是一个特效展示 SPA 项目  
+> http://sysc.fromyb.com
 
 ### TODO
 - [x] 首页列表
