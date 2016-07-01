@@ -48,6 +48,8 @@ export default {
   header
     height: 400px
     text-align: center
+    & + div
+      max-width: 910px
     &:before
       content: ''
       height: 100%
