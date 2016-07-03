@@ -3,6 +3,15 @@
 >
 > ![图片](https://avatars1.githubusercontent.com/u/2195901?s=64)
 
+## 直播
+- 时间
+  - 周一 ~ 周五
+  - 开始: 11:00 pm ~ 11:30 am
+  - 结束: 1:30 am ~ 2:00 am
+- 链接
+  - 互动: http://sysc.fromyb.com/#!/live
+  - 留言: https://www.livecoding.tv/yozman/
+
 ### TODO
 - [x] 首页列表
 - [x] 特效笔记
@@ -10,6 +19,7 @@
 - [ ] 特效评论
 - [ ] 特效分享
 - [ ] 特效打赏
+- [ ] 代码直播
 
 ### 技术选型
 - bootstrap
