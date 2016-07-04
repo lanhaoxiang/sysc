@@ -1,5 +1,9 @@
 <template lang="pug">
-div( :class.once=" $options.name ")
+div(
+  :class.once = `$options.name`,
+  :type = `type`,
+  :outline = `outline`
+)
   slot
 </template>
 
@@ -7,37 +11,24 @@ div( :class.once=" $options.name ")
 export default {
   name: 'W__Bootstrap_Button',
   props: {
-    type: {
-      type: String,
-      default: 'primary'
-    },
+    type: String,
     outline: {
       type: Boolean,
       default: false
-    },
-    size: {
-      type: String
-    }
-  },
-  methods: {
-    clickHandler () {
-      if (this.args.url) {
-        window.location = this.args.url
-      }
     }
   }
 }
 </script>
 
 <style lang="sass" scoped>
-@import ~bootstrap/scss/_variables
-@import ~bootstrap/scss/_mixins
-@import ~bootstrap/scss/_buttons
+@import ~bootstrap/scss/variables
+@import ~bootstrap/scss/mixins
+@import ~bootstrap/scss/buttons
 
 .W__Bootstrap_Button
   @extend .btn
   @each $type in primary, secondary, info, success, warning, danger
-    &.btn-#{$type}
+    &[type=#{$type}]
       @extend .btn-#{$type}
-    &.btn-#{$type}-outline
-      @extend .btn-#{$type}-outline
+      &[outline]
+        @extend .btn-#{$type}-outline

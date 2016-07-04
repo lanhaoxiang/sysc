@@ -1,6 +1,8 @@
 <template lang="pug">
-div( :class.once=" $options.name "
-     v-html=" content | marked | scoped ")
+div(
+  :class.once = `$options.name`,
+  v-html = `content | marked | scoped`
+)
 </template>
 
 <script>

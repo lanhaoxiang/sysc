@@ -1,18 +1,18 @@
 <template lang="pug">
-div( :class.once=" $options.name ")
+div( :class.once = `$options.name` )
   table
     thead
       tr
         each th in [ '编号', '描述', '链接' ]
           th= th
     tbody
-      tr( v-for=" effect in _list ")
+      tr( v-for = `effect in _list` )
         td {{ effect.key }}
         td {{ effect.title }}
         td
-          a( :href=" effect.source ")
+          a( :href = `effect.source` )
             bootstrap-button 源码
-          a( v-link=" effect.key " )
+          a( v-link = `effect.key` )
             bootstrap-button 预览
 </template>
 
@@ -37,9 +37,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import ~bootstrap/scss/_variables
-@import ~bootstrap/scss/_mixins
-@import ~bootstrap/scss/_tables
+@import ~bootstrap/scss/variables
+@import ~bootstrap/scss/mixins
+@import ~bootstrap/scss/tables
 
 .M__Effect_List
   table

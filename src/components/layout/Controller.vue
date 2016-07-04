@@ -1,5 +1,5 @@
 <template lang="pug">
-component( :is=" $route.layout || 'blank' ")
+component( :is = `$route.layout || 'blank'` )
 </template>
 
 <script>

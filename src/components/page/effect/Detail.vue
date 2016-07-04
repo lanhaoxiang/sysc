@@ -1,18 +1,22 @@
 <template lang="pug">
-div( :class.once=" [ $options.name, { open: preview } ] "
-     v-show=" !$loadingRouteData ")
+div(
+  :class.once = `[ $options.name, { open: preview } ]`,
+  v-show = `!$loadingRouteData`
+)
   header
     h1 {{ _effect.title }}
     div
       a: bootstrap-button 笔记
-      a( @click=" preview = true ")
+      a( @click = `preview = true` )
         bootstrap-button 演示
-      a( :href=" _effect.source ")
+      a( :href = `_effect.source` )
         bootstrap-button 源码
-  github-markdown( :content=" _effect.readme ")
-  effect-preview( v-show=" preview ",
-                  :url=" _effect.preview ",
-                  :open.sync=" preview ")
+  github-markdown( :content = `_effect.readme` )
+  effect-preview(
+    v-show = `preview`,
+    :url = `_effect.preview`,
+    :open.sync = `preview`
+  )
 </template>
 
 <script>
@@ -47,9 +51,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import ~bootstrap/scss/_variables
-@import ~bootstrap/scss/_mixins
-@import ~bootstrap/scss/_grid
+@import ~bootstrap/scss/variables
+@import ~bootstrap/scss/mixins
+@import ~bootstrap/scss/grid
 
 .P__Effect_Detail
   @extend .container

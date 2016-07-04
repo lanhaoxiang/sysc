@@ -1,5 +1,5 @@
 <template lang="pug">
-div( :class.once=" $options.name ")
+div( :class.once = `$options.name` )
   router-view
 </template>
 

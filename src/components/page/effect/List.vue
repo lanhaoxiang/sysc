@@ -1,14 +1,16 @@
 <template lang="pug">
-div( :class.once=" $options.name "
-     v-show=" !$loadingRouteData ")
-  a( href=" https://github.com/yozman/sysc ")
+div(
+  :class.once = `$options.name`,
+  v-show = `!$loadingRouteData`
+)
+  a( href = `https://github.com/yozman/sysc` )
     github-corner
   header
     h1 show you sth cool
     div
-      a( href=" https://github.com/yozman/sysc/network ")
+      a( href = `https://github.com/yozman/sysc/network` )
         bootstrap-button fork: {{ _fork }}
-      a( href=" https://github.com/yozman/sysc/stargazers ")
+      a( href = `https://github.com/yozman/sysc/stargazers` )
         bootstrap-button star: {{ _star }}
   effect-list
 </template>
@@ -39,9 +41,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import ~bootstrap/scss/_variables
-@import ~bootstrap/scss/_mixins
-@import ~bootstrap/scss/_grid
+@import ~bootstrap/scss/variables
+@import ~bootstrap/scss/mixins
+@import ~bootstrap/scss/grid
 
 .P__Effect_List
   @extend .container
