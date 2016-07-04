@@ -41,10 +41,9 @@ export default {
 @import ~bootstrap/scss/mixins
 @import ~bootstrap/scss/tables
 
-.M__Effect_List
-  table
-    @extend .table, .table-bordered
-  thead
-    @extend .thead-default
-  tbody td
-    vertical-align: middle
+table
+  @extend .table, .table-bordered
+thead
+  @extend .thead-default
+tbody td
+  vertical-align: middle

@@ -60,36 +60,36 @@ export default {
   &.open
     height: 0
     overflow: hidden
-  header
-    height: 400px
-    text-align: center
-    & + div
-      max-width: 910px
-      margin: 2em auto
+header
+  height: 400px
+  text-align: center
+  & + div
+    max-width: 910px
+    margin: 2em auto
+  &:before
+    content: ''
+    height: 100%
+  &:before, h1
+    display: inline-block
+    vertical-align: middle
+  h1 + div
+    margin-top: -160px
+    &:hover a:before
+      transform: scale(0)
+      background: none
+    a:hover:before
+      transform: scaleX(1)
+      background: $link-hover-color
+  a
+    position: relative
+    transition: color .3s
+    &:first-child:before
+      transform: scaleX(1)
+      background: $link-color
     &:before
       content: ''
-      height: 100%
-    &:before, h1
-      display: inline-block
-      vertical-align: middle
-    h1 + div
-      margin-top: -160px
-      &:hover a:before
-        transform: scale(0)
-        background: none
-      a:hover:before
-        transform: scaleX(1)
-        background: $link-hover-color
-    a
-      position: relative
-      transition: color .3s
-      &:first-child:before
-        transform: scaleX(1)
-        background: $link-color
-      &:before
-        content: ''
-        position: absolute
-        left: 17px; right: 17px
-        height: 3px; bottom: -9px
-        transform: scaleX(0)
-        transition: all .3s
+      position: absolute
+      left: 17px; right: 17px
+      height: 3px; bottom: -9px
+      transform: scaleX(0)
+      transition: all .3s

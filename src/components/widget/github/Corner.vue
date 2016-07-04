@@ -21,21 +21,21 @@ export default {
   position: absolute
   right: 0
   cursor: pointer
-  svg
-    fill: #373a3c
-    color: #fff
-  .octo-back
-    transition: fill .3s
-  .octo-body
-    fill: currentColor
-  .octo-arm
-    fill: currentColor
-    transform-origin: 130px 106px
   &:hover
     .octo-back
       fill: #0275d8
     .octo-arm
       animation: octocat-wave 560ms ease-in-out
+svg
+  fill: #373a3c
+  color: #fff
+.octo-back
+  transition: fill .3s
+.octo-body
+  fill: currentColor
+.octo-arm
+  fill: currentColor
+  transform-origin: 130px 106px
 @keyframes octocat-wave
   0%, 100%
     transform: rotate(0)

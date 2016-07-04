@@ -47,17 +47,17 @@ export default {
 
 .P__Effect_List
   @extend .container
-  header
-    height: 400px
-    text-align: center
-    & + div
-      max-width: 910px
-      margin: 2em auto
-    &:before
-      content: ''
-      height: 100%
-    &:before, h1
-      display: inline-block
-      vertical-align: middle
-    h1 + div
-      margin-top: -160px
+header
+  height: 400px
+  text-align: center
+  & + div
+    max-width: 910px
+    margin: 2em auto
+  &:before
+    content: ''
+    height: 100%
+  &:before, h1
+    display: inline-block
+    vertical-align: middle
+  h1 + div
+    margin-top: -160px

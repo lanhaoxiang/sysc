@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.L__Effect
-  #back
-    position: fixed
-    left: 1em; top: 1em
+#back
+  position: fixed
+  left: 1em; top: 1em
