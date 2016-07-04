@@ -13,6 +13,11 @@ div(
       a( href = `https://github.com/yozman/sysc/stargazers` )
         bootstrap-button star: {{ _star }}
   effect-list
+  footer: a(
+    v-link.literal = `/live`,
+    title = `日期: 周末 && 法定节假日除外\n开始: 11:00 pm ~ 11:30 pm\n结束: 1:30 am ~ 2:00 am`
+  )
+    bootstrap-button 看直播 &rarr;
 </template>
 
 <script>
@@ -61,3 +66,5 @@ header
     vertical-align: middle
   h1 + div
     margin-top: -160px
+footer
+  text-align: center

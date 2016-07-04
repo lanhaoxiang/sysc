@@ -13,5 +13,10 @@ const router = new Router()
 // 绑定路由规则
 router.map(route)
 
+// 定义路由重定向
+router.alias({
+  '/': 'effect'
+})
+
 // 开始路由系统
 router.start({ ...App, store }, 'app')

@@ -12,7 +12,10 @@ div( :class.once = `$options.name` )
         td
           a( :href = `effect.source` )
             bootstrap-button 源码
-          a( v-link = `effect.key` )
+          a( v-link = `{
+            name: 'effect/detail',
+            params: { num: effect.key }
+          }` )
             bootstrap-button 预览
 </template>
 
