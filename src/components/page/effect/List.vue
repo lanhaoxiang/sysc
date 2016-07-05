@@ -67,4 +67,5 @@ header
   h1 + div
     margin-top: -160px
 footer
+  height: 10em
   text-align: center
