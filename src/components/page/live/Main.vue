@@ -9,7 +9,7 @@ div( :class.once = `$options.name` )
     allowfullscreen = `true`
   )
   #feedback
-    | 讨论(国内) && 留言(海外)
+    h2 讨论(国内) && 留言(海外)
     iframe( src = `https://fromyb.pubu.im/pub/c/sysc` )
     iframe( src = `https://www.livecoding.tv/yozman/chat` )
 </template>
@@ -54,9 +54,10 @@ header + div
     width: 100%
     height: 100%
 #feedback
-  text-align: center
   padding: 1em .5em 10em
   @include clearfix()
+  h2
+    text-align: center
   iframe
     border: 1px solid
     width: 50%
