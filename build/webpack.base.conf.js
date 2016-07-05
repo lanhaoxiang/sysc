@@ -81,6 +81,11 @@ module.exports = {
   },
   vue: {
     loaders: utils.cssLoaders(),
-    postcss: [require('postcss-pxtorem')()]
+    postcss: [
+      require('postcss-pxtorem')({
+        rootValue: 16,
+        propWhiteList: []
+      })
+    ]
   }
 }
