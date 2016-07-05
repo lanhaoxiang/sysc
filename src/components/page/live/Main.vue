@@ -61,7 +61,7 @@ header + div
   iframe
     border: 1px solid
     width: 50%
-    height: 50em
+    height: 800px
     margin-top: 1em
     float: left
     margin-left: -.5em
